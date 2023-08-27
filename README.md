@@ -1,4 +1,5 @@
 # Robot.ST
+To download Ros on Ubuntu on Linux:
 $sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 $sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -54,9 +55,21 @@ $sudo nano ~/.bashrc
 
 at the end of the (bashrc) file add the follwing line
 (source /home/hananalganas/catkin_ws/devel/setup.bash)
-then 
-ctrl + o
-
 $source ~/.bashrc
 
 $roslaunch robot_arm_pkg check_motors.launch
+then 
+ctrl + o
+
+To run TurtleBot on the emulator:
+
+Install Simulation Package :
+$ cd ~/catkin_ws/src/
+$ git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ cd ~/catkin_ws && catkin_make
+
+TurtleBot3 World:
+$ export TURTLEBOT3_MODEL=waffle
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+
